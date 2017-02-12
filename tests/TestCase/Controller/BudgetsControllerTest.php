@@ -16,7 +16,8 @@ class BudgetsControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.budgets'
+        'app.budgets',
+        'app.users'
     ];
 
     /**

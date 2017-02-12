@@ -16,7 +16,8 @@ class AddressControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.address'
+        'app.address',
+        'app.users'
     ];
 
     /**

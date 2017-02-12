@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Cake\ORM\TableRegistry;
 
 /**
  * Address Controller
@@ -19,10 +18,13 @@ class AddressController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
         $address = $this->paginate($this->Address);
 
         $this->set(compact('address'));
-        $this->set('_serialize', ['address']);       
+        $this->set('_serialize', ['address']);
     }
 
     /**
@@ -35,7 +37,7 @@ class AddressController extends AppController
     public function view($id = null)
     {
         $addres = $this->Address->get($id, [
-            'contain' => []
+            'contain' => ['Users']
         ]);
 
         $this->set('addres', $addres);
@@ -48,20 +50,19 @@ class AddressController extends AppController
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add()
-    {   
-        $this->loadModel('Users');
-        $users = $this->Users->find('list');
-        $this->set("users", $users);
-        $addres = $this->Address->newEntity();           
+    {
+        $addres = $this->Address->newEntity();
         if ($this->request->is('post')) {
-            $addres = $this->Address->patchEntity($addres, $this->request->data);            
+            $addres = $this->Address->patchEntity($addres, $this->request->data);
             if ($this->Address->save($addres)) {
                 $this->Flash->success(__('The addres has been saved.'));
+
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The addres could not be saved. Please, try again.'));
         }
-        $this->set(compact('addres'));
+        $users = $this->Address->Users->find('list', ['limit' => 200]);
+        $this->set(compact('addres', 'users'));
         $this->set('_serialize', ['addres']);
     }
 
@@ -86,7 +87,8 @@ class AddressController extends AppController
             }
             $this->Flash->error(__('The addres could not be saved. Please, try again.'));
         }
-        $this->set(compact('addres'));
+        $users = $this->Address->Users->find('list', ['limit' => 200]);
+        $this->set(compact('addres', 'users'));
         $this->set('_serialize', ['addres']);
     }
 

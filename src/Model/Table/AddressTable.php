@@ -32,7 +32,7 @@ class AddressTable extends Table
 
         $this->table('address');
         $this->displayField('id_address');
-        $this->primaryKey('id_address'); 
+        $this->primaryKey('id_address');
         $this->belongsTo('Users', array(
             'foreignKey' => 'username',
             'joinType' => 'INNER',
@@ -47,13 +47,24 @@ class AddressTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
-      
+        $validator
+            ->integer('id_address')
+            ->allowEmpty('id_address', 'create');
+
         $validator
             ->requirePresence('username', 'create')
             ->notEmpty('username');
 
         $validator
-            ->allowEmpty('address');
+            ->requirePresence('latitude', 'create')
+            ->notEmpty('latitude');
+
+        $validator
+            ->requirePresence('address_description', 'create')
+            ->notEmpty('address_description');
+
+        $validator
+            ->allowEmpty('longitude');
 
         return $validator;
     }

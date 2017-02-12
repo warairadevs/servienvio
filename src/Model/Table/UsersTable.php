@@ -33,12 +33,6 @@ class UsersTable extends Table
         $this->table('users');
         $this->displayField('username');
         $this->primaryKey('username');
-        $hasMany = array(
-            'Address' => array(
-                'className' => 'Address',
-                'foreignKey' => 'username'
-            )
-        );
     }
 
     /**
@@ -50,8 +44,8 @@ class UsersTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->requirePresence('username', 'create')
-            ->notEmpty('username');
+            ->requirePresence('name', 'create')
+            ->allowEmpty('username', 'create');
 
         $validator
             ->requirePresence('name', 'create')
@@ -78,12 +72,12 @@ class UsersTable extends Table
             ->date('bornDate')
             ->requirePresence('bornDate', 'create')
             ->notEmpty('bornDate');
-        /*
+
         $validator
             ->integer('active')
             ->requirePresence('active', 'create')
             ->notEmpty('active');
-            */
+
         return $validator;
     }
 

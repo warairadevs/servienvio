@@ -26,7 +26,9 @@ class AddressFixture extends TestFixture
     public $fields = [
         'id_address' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'username' => ['type' => 'string', 'length' => 320, 'null' => false, 'default' => null, 'collate' => 'utf8_unicode_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'address' => ['type' => 'string', 'length' => 500, 'null' => true, 'default' => null, 'collate' => 'utf8_unicode_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'latitude' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'address_description' => ['type' => 'string', 'length' => 500, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'longitude' => ['type' => 'string', 'length' => 50, 'null' => true, 'default' => null, 'collate' => 'utf8_unicode_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_indexes' => [
             'FK_address_users_username_idx' => ['type' => 'index', 'columns' => ['username'], 'length' => []],
         ],
@@ -50,7 +52,9 @@ class AddressFixture extends TestFixture
         [
             'id_address' => 1,
             'username' => 'Lorem ipsum dolor sit amet',
-            'address' => 'Lorem ipsum dolor sit amet'
+            'latitude' => 'Lorem ipsum dolor sit amet',
+            'address_description' => 'Lorem ipsum dolor sit amet',
+            'longitude' => 'Lorem ipsum dolor sit amet'
         ],
     ];
 }

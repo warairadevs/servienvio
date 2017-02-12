@@ -18,6 +18,9 @@ class BudgetsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
         $budgets = $this->paginate($this->Budgets);
 
         $this->set(compact('budgets'));
@@ -34,7 +37,7 @@ class BudgetsController extends AppController
     public function view($id = null)
     {
         $budget = $this->Budgets->get($id, [
-            'contain' => []
+            'contain' => ['Users']
         ]);
 
         $this->set('budget', $budget);
@@ -48,9 +51,6 @@ class BudgetsController extends AppController
      */
     public function add()
     {
-        $this->loadModel('Users');
-        $users = $this->Users->find('list');
-        $this->set("users", $users);
         $budget = $this->Budgets->newEntity();
         if ($this->request->is('post')) {
             $budget = $this->Budgets->patchEntity($budget, $this->request->data);
@@ -61,7 +61,8 @@ class BudgetsController extends AppController
             }
             $this->Flash->error(__('The budget could not be saved. Please, try again.'));
         }
-        $this->set(compact('budget'));
+        $users = $this->Budgets->Users->find('list', ['limit' => 200]);
+        $this->set(compact('budget', 'users'));
         $this->set('_serialize', ['budget']);
     }
 
@@ -86,7 +87,8 @@ class BudgetsController extends AppController
             }
             $this->Flash->error(__('The budget could not be saved. Please, try again.'));
         }
-        $this->set(compact('budget'));
+        $users = $this->Budgets->Users->find('list', ['limit' => 200]);
+        $this->set(compact('budget', 'users'));
         $this->set('_serialize', ['budget']);
     }
 

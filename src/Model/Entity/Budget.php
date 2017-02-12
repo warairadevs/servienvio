@@ -8,10 +8,14 @@ use Cake\ORM\Entity;
  *
  * @property int $id_budget
  * @property string $username
- * @property string $source_address
- * @property string $destination_address
+ * @property string $source_latitude
+ * @property string $destination_latitude
  * @property float $cost
  * @property \Cake\I18n\Time $delivery_time_estimated
+ * @property string $source_longitude
+ * @property string $destination_longitude
+ *
+ * @property \App\Model\Entity\User $user
  */
 class Budget extends Entity
 {
@@ -26,6 +30,7 @@ class Budget extends Entity
      * @var array
      */
     protected $_accessible = [
-        '*' => true
+        '*' => true,
+        'id_budget' => false
     ];
 }

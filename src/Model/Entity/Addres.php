@@ -8,7 +8,11 @@ use Cake\ORM\Entity;
  *
  * @property int $id_address
  * @property string $username
- * @property string $address
+ * @property string $latitude
+ * @property string $address_description
+ * @property string $longitude
+ *
+ * @property \App\Model\Entity\User $user
  */
 class Addres extends Entity
 {

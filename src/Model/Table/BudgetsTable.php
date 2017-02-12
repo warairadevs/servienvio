@@ -46,19 +46,22 @@ class BudgetsTable extends Table
      * @return \Cake\Validation\Validator
      */
     public function validationDefault(Validator $validator)
-    {       
+    {
+        $validator
+            ->integer('id_budget')
+            ->allowEmpty('id_budget', 'create');
 
         $validator
             ->requirePresence('username', 'create')
             ->notEmpty('username');
 
         $validator
-            ->requirePresence('source_address', 'create')
-            ->notEmpty('source_address');
+            ->requirePresence('source_latitude', 'create')
+            ->notEmpty('source_latitude');
 
         $validator
-            ->requirePresence('destination_address', 'create')
-            ->notEmpty('destination_address');
+            ->requirePresence('destination_latitude', 'create')
+            ->notEmpty('destination_latitude');
 
         $validator
             ->numeric('cost')
@@ -69,6 +72,14 @@ class BudgetsTable extends Table
             ->dateTime('delivery_time_estimated')
             ->requirePresence('delivery_time_estimated', 'create')
             ->notEmpty('delivery_time_estimated');
+
+        $validator
+            ->requirePresence('source_longitude', 'create')
+            ->notEmpty('source_longitude');
+
+        $validator
+            ->requirePresence('destination_longitude', 'create')
+            ->notEmpty('destination_longitude');
 
         return $validator;
     }
