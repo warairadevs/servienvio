@@ -28,6 +28,11 @@
         </td>
         <td>
             <?= $this->Html->link('Edit', ['action' => 'edit', $user->username]) ?>
+            <?= $this->Form->postLink(
+                'Delete',
+                ['action' => 'delete', $user->username],
+                ['confirm' => 'Are you sure?'])
+            ?>
         </td>
     </tr>
     <?php endforeach; ?>
