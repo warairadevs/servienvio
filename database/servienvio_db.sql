@@ -26,13 +26,13 @@ DROP TABLE IF EXISTS `address`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `address` (
   `id_address` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(320) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(20) CHARACTER SET utf8 NOT NULL,
   `latitude` varchar(50) CHARACTER SET utf8 NOT NULL,
   `address_description` varchar(500) CHARACTER SET utf8 NOT NULL,
   `longitude` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_address`),
-  KEY `FK_address_users_username_idx` (`username`),
-  CONSTRAINT `FK_address_users_username` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_address_user_username_idx` (`username`),
+  CONSTRAINT `FK_address_users_username` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `budgets`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `budgets` (
   `id_budget` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(320) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(20) CHARACTER SET utf8 NOT NULL,
   `source_latitude` varchar(50) CHARACTER SET utf8 NOT NULL,
   `destination_latitude` varchar(50) CHARACTER SET utf8 NOT NULL,
   `cost` double NOT NULL,
@@ -86,7 +86,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `username` varchar(320) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(20) CHARACTER SET utf8 NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `lastName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(320) COLLATE utf8_unicode_ci NOT NULL,
@@ -117,4 +117,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-12 15:03:05
+-- Dump completed on 2017-02-12 15:31:07
