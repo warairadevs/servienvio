@@ -1,4 +1,37 @@
+<<<<<<< HEAD
 /vendor/*
 /config/app.php
 /tmp/*
 /logs/*
+=======
+# User specific & automatically generated files #
+#################################################
+/app/Config/database.php
+/app/tmp
+/lib/Cake/Console/Templates/skel/tmp/
+/plugins
+/vendors
+/build
+/dist
+/tags
+*.mo
+
+# IDE and editor specific files #
+#################################
+/nbproject
+.idea
+/.project
+/.buildpath
+/.settings/
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+>>>>>>> ae39b8810742c724e60c330ad8785a758b58c8e6

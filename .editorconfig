@@ -4,8 +4,12 @@
 root = true
 
 [*]
+<<<<<<< HEAD
 indent_style = space
 indent_size = 4
+=======
+indent_style = tab
+>>>>>>> ae39b8810742c724e60c330ad8785a758b58c8e6
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true

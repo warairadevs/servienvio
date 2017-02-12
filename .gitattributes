@@ -17,7 +17,10 @@
 *.properties text
 *.txt text
 *.xml text
+<<<<<<< HEAD
 *.svg text
+=======
+>>>>>>> ae39b8810742c724e60c330ad8785a758b58c8e6
 *.yml text
 .htaccess text
 
@@ -34,9 +37,14 @@
 *.ico binary
 *.mo binary
 *.pdf binary
+<<<<<<< HEAD
 *.phar binary
 *.woff binary
 *.woff2 binary
 *.ttf binary
 *.otf binary
+=======
+*.woff binary
+*.ttf binary
+>>>>>>> ae39b8810742c724e60c330ad8785a758b58c8e6
 *.eot binary
