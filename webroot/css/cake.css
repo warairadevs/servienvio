@@ -4,19 +4,19 @@ a.disabled {
 }
 
 a:hover {
-    color: #15848F;
+    color: #0059AF;
 }
 
 a {
-    color: #1798A5;
+    color: #0059AF;
 }
 
 .side-nav li a:not(.button) {
-    color: #15848F;
+    color: #0059AF;
 }
 
 .side-nav li a:not(.button):hover {
-    color: #15848F;
+    color: #0059AF;
 }
 
 header {
@@ -34,7 +34,7 @@ header .header-title {
 }
 
 legend {
-    color:#15848F;
+    color:#0059AF;
 }
 
 .row {
@@ -43,13 +43,13 @@ legend {
 
 .actions.columns {
     margin-top:1rem;
-    border-left: 5px solid #15848F;
+    border-left: 5px solid #0059AF;
     padding-left: 15px;
     padding: 32px 20px;
 }
 
 .actions.columns h3 {
-    color:#15848F;
+    color:#0059AF;
 }
 
 .related table {
@@ -319,20 +319,32 @@ pre {
 }
 
 .top-bar.expanded .title-area {
-    background: #01545b;
+    background: white;
 }
 
-.top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #116d76;
+.top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) {
+    background: white;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-    background-color: #308e97;
-    background: #308e97;
+    background-color: #0059AF;
+    background: #0059AF;
+    border-color: #0059AF;
 }
-
+.top-bar-section li.servicio_tab a:not(.button){
+  color: #222;
+    background-color: #FFC64B !important;
+    background: #FFC64B !important;
+    border-color: #FFC64B;
+}
+.top-bar-section li.servicio_tab a:not(.button){
+  color: #222;
+    background-color: #FFC64B !important;
+    background: #FFC64B !important;
+    border-color: #FFC64B;
+}
 .side-nav li.heading {
-    color: #1798A5;
+    color: #0059AF;
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -367,15 +379,15 @@ table tr {
 }
 
 table thead tr {
-    border-bottom: 1px solid #1798A5;
+    border-bottom: 1px solid #0059AF;
 }
 
 table tr th {
     padding: 0.5625rem 0.625rem;
     font-size: 0.875rem;
-    color: #1798A5;
+    color: #0059AF;
     text-align: left;
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #0059AF;
 }
 
 table tr:nth-of-type(even) {
@@ -386,10 +398,11 @@ fieldset {
     border: none;
     padding: 1.25rem;
     margin: 1.125rem 0;
+    max-width: 50%
 }
 
 fieldset legend {
-    border-bottom: 2px solid #1798A5;
+    border-bottom: 2px solid #0059AF;
     width: 100%;
     line-height: 2rem;
 }
@@ -462,7 +475,7 @@ div.message.hidden {
 .vertical-table th {
     padding: 0.5625rem 0.625rem;
     font-size: 0.875rem;
-    color: #1798A5;
+    color: #0059AF;
     border: none;
     text-align: left;
 }

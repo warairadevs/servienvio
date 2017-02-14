@@ -229,9 +229,9 @@ return [
              * the following line and set the port accordingly
              */
             'port' => '3307',
-            'username' => 'servienvio',
-            'password' => '123456',
-            'database' => 'servienvio',
+            'username' => 'servienv_user',
+            'password' => 'LAKJSD39048alskj20293ASKDj',
+            'database' => 'servienv_prod',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
