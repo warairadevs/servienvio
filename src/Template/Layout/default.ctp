@@ -32,6 +32,17 @@ $cakeDescription = 'Servienvio';
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+        min-height: 300px;
+      }
+    </style>
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
@@ -57,6 +68,8 @@ $cakeDescription = 'Servienvio';
         <?= $this->fetch('content') ?>
     </div>
     <footer>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTDBilWpJEwfiIBwtvV-9_z0M68t69dAA&callback=initMap"
+        async defer></script>
     </footer>
 </body>
 </html>
