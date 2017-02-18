@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `servienvio` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-USE `servienvio`;
+CREATE DATABASE  IF NOT EXISTS `servienv_prod` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+USE `servienv_prod`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: servienvio
